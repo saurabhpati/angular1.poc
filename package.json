@@ -1,0 +1,37 @@
+{
+  "name": "angular1.poc",
+  "version": "1.0.0",
+  "description": "This is project on angular 1 for its learning",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/app/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saurabhpati/angular1.poc.git"
+  },
+  "keywords": [
+    "angular1",
+    "angular",
+    "angular",
+    "1",
+    "angular",
+    "one",
+    "learning",
+    "basics"
+  ],
+  "author": "Saurabh Pati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saurabhpati/angular1.poc/issues"
+  },
+  "homepage": "https://github.com/saurabhpati/angular1.poc#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1"
+  }
+}
