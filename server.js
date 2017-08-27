@@ -6,6 +6,9 @@ const express = require('express'),
 
 // This is to serve public js files.
 app.use('/js', express.static('src/public/js'));
+app.use('/css', express.static('src/public/css'));
+app.use('/img', express.static('src/public/img'));
+app.use('/fonts', express.static('src/public/fonts'));
 
 app.get('/', (request, response) => {
     fs.createReadStream('./index.html').pipe(response);
