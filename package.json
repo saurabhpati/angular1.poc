@@ -28,10 +28,10 @@
   },
   "homepage": "https://github.com/saurabhpati/angular1.poc#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "angular": "^1.6.4"
   },
   "devDependencies": {
-    "angular": "^1.6.4",
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.2.1"
   }

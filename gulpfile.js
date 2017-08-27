@@ -3,10 +3,10 @@ let gulp = require('gulp'),
 
 gulp.task('default', () => {
     nodemon({
-        script: './src/app/server.js',
+        script: './server.js',
         ext: 'js'
     }).on('rs', () => {
         gulp.src('./src/app/server.js');
-        gulp.watch(['./src/**/**.js', './src/**/**.html']);
+        gulp.watch(['./src/**/**.js', './**.html', '*.js', '*.html']);
     });
 });
