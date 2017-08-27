@@ -4,7 +4,8 @@ const express = require('express'),
     port = process.env.port || 8080,
     fs = require('fs');
 
-app.use(express.static('src/public'));
+// This is to serve public js files.
+app.use('/js', express.static('src/public/js'));
 
 app.get('/', (request, response) => {
     fs.createReadStream('./index.html').pipe(response);
