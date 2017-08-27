@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/app/server.js"
+    "start": "node ./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -13,13 +13,10 @@
   },
   "keywords": [
     "angular1",
-    "angular",
-    "angular",
-    "1",
-    "angular",
-    "one",
-    "learning",
-    "basics"
+    "angular 1",
+    "angular one",
+    "angular learning",
+    "angular basics"
   ],
   "author": "Saurabh Pati",
   "license": "ISC",
@@ -29,7 +26,12 @@
   "homepage": "https://github.com/saurabhpati/angular1.poc#readme",
   "dependencies": {
     "express": "^4.15.3",
-    "angular": "^1.6.4"
+    "angular": "^1.6.4",
+    "bootstrap": "^4.0.0-beta",
+    "font-awesome": "4.7.0",
+    "jquery": "^3.2.1",
+    "jquery.easing": "^1.4.1",
+    "popper.js": "^1.11.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
