@@ -13,12 +13,15 @@ app.use('/fonts', express.static('src/public/fonts'));
 app.set('views', './src/app/views');
 app.set('view engine', '.hbs');
 app.engine('.hbs', handlebars({
-    extname: '.hbs'
+    extname: '.hbs',
+    defaultLayout: 'index',
+    layoutsDir: __dirname + '/src/app/views',
+    partialsDir: __dirname + '/src/app/partials'
 }));
 
 app.get('/', (request, response) => {
-    fs.createReadStream('index.html').pipe(response);
-    //response.render('index');
+    //fs.createReadStream('index.html').pipe(response);
+    response.render('index');
 });
 
 app.listen(port, () => {
