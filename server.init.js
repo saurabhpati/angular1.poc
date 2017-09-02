@@ -26,7 +26,6 @@ let _serveStaticFiles = (app, express) => {
     app.use('/css', express.static('src/public/css'));
     app.use('/img', express.static('src/public/img'));
     app.use('/fonts', express.static('src/public/fonts'));
-    app.use('/component', express.static('src/app/component'));
 }
 
 // The init module to be exported.
