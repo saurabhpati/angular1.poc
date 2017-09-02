@@ -1,9 +1,9 @@
 // Starts up the node server for the application. 
 const express = require('express'),
-    port = process.env.port || 8080;
-let serverInitializer = require('./app.init.js');
+    port = process.env.port || 8080,
+    serverInitializer = require('./server.init.js'),
+    app = serverInitializer.initApp(express);
 
-const app = serverInitializer.initApp(express);
 app.get('/', (request, response) => {
     response.render('index');
 });
