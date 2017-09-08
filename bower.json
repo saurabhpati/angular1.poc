@@ -1,0 +1,39 @@
+{
+  "name": "angular1.softbuilder",
+  "description": "SoftBuilder Inc. is a fake service based software company.",
+  "main": "server.js",
+  "authors": [
+    "Saurabh Pati"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular1",
+    "angular",
+    "1",
+    "angular",
+    "one",
+    "angular",
+    "learning",
+    "angular",
+    "basics"
+  ],
+  "homepage": "https://github.com/saurabhpati/angular1.poc",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "bootstrap": "^4.0.0-beta",
+    "express": "^4.15.3",
+    "font-awesome": "4.7.0",
+    "jquery": "^3.2.1",
+    "jquery.easing": "*",
+    "popper.js": "^1.11.1"
+  }
+}
