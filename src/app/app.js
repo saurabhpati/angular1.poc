@@ -1,5 +1,5 @@
 // This file bootstraps angular into the application.
-var app = angular.module('softbuilderModule', []);
+let sbApp = angular.module('softbuilderModule', []);
 
 /* using window.onload over document.onload because document.onload triggers when DOM is ready while 
  * window.onload is triggered when the page loading has finished. Upto until the running of this file, 
@@ -7,6 +7,6 @@ var app = angular.module('softbuilderModule', []);
  * works but document.onload does not. 
  */
 window.onload = () => {
-    angular.bootstrap(document.body);
+    angular.bootstrap(document.body, ['softbuilderModule']);
     console.log('app has been initialized...');
 }
