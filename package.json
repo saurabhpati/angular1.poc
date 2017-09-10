@@ -1,7 +1,7 @@
 {
-  "name": "angular1.poc",
+  "name": "angular1.softbuilder",
   "version": "1.0.0",
-  "description": "This is project on angular 1 for its learning",
+  "description": "SoftBuilder Inc. is a fake service based software company.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,21 +9,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saurabhpati/angular1.poc.git"
+    "url": "git+https://github.com/saurabhpati/angular1.softbuilder.git"
   },
   "keywords": [
     "angular1",
     "angular 1",
     "angular one",
     "angular learning",
-    "angular basics"
+    "angular basics",
+    "softbuilder",
+    "softbuilders"
   ],
   "author": "Saurabh Pati",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/saurabhpati/angular1.poc/issues"
+    "url": "https://github.com/saurabhpati/angular1.softbuilder/issues"
   },
-  "homepage": "https://github.com/saurabhpati/angular1.poc#readme",
+  "homepage": "https://github.com/saurabhpati/angular1.softbuilder#readme",
   "dependencies": {
     "express": "^4.15.3"
   },
