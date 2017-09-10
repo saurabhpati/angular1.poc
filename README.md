@@ -1,5 +1,5 @@
-# angular1.poc
-This is a project on angular 1 for learning its concepts and its intricacies
+# angular1.softbuilder
+SoftBuilder Inc. is a fake service based software company.
 
 To run the server
 
