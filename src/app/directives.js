@@ -35,10 +35,26 @@
         };
     }
 
+    sbPortfolioGrid = () => {
+        return {
+            restrict: 'E',
+            templateUrl: 'app/views/portfolio-grid.html'
+        }
+    }
+
+    sbPortfolioModal = () => {
+        return {
+            restrict: 'E',
+            templateUrl: 'app/views/portfolio-modal.html'
+        }
+    }
+
     sbApp.directive('sbNavigation', sbNavigation);
     sbApp.directive('sbHeader', sbHeader);
     sbApp.directive('sbAbout', sbAbout);
     sbApp.directive('sbContact', sbContact);
     sbApp.directive('sbFooter', sbFooter);
+    sbApp.directive('sbPortfolioGrid', sbPortfolioGrid);
+    sbApp.directive('sbPortfolioModal', sbPortfolioModal);
 })();
 
