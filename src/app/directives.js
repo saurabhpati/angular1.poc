@@ -33,6 +33,13 @@
         };
     }
 
+    sbForm = () => {
+        return {
+            restrict: 'E',
+            templateUrl: 'app/views/sb-form.html'
+        }
+    }
+
     sbFooter = () => {
         return {
             restrict: 'E',
@@ -58,6 +65,7 @@
     sbApp.directive('sbHeader', sbHeader);
     sbApp.directive('sbAbout', sbAbout);
     sbApp.directive('sbContact', sbContact);
+    sbApp.directive('sbForm', sbForm);
     sbApp.directive('sbFooter', sbFooter);
     sbApp.directive('sbPortfolioGrid', sbPortfolioGrid);
     sbApp.directive('sbPortfolioModal', sbPortfolioModal);
