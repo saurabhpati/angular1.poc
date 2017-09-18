@@ -29,7 +29,9 @@
     sbContact = () => {
         return {
             restrict: 'E',
-            templateUrl: 'app/views/contact.html'
+            templateUrl: 'app/views/contact.html',
+            controller: 'contactController',
+            controllerAs: 'contactController'
         };
     }
 
