@@ -19,5 +19,3 @@
 
     sbApp.controller('aboutController', aboutController);
 })();
-
-
