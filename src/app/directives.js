@@ -22,7 +22,7 @@
             controllerAs: 'aboutController',
             link: (scope, element, attr) => {
 
-            }   
+            }
         };
     }
 
@@ -38,7 +38,27 @@
     sbForm = () => {
         return {
             restrict: 'E',
-            templateUrl: 'app/views/sb-form.html'
+            templateUrl: 'app/views/sb-form.html',
+            scope: {
+                model: '='
+            }
+        }
+    }
+
+    sbControlGroup = ($compile) => {
+        return {
+            restrict: 'E',
+            templateUrl: 'app/views/sb-control-group.html',
+            scope: {
+                model: '='
+            },
+            link: (scope, element, attr) => {
+                let model = scope.model;
+                let template = '<' + model.fieldType + ' class="form-control"' + ' id="' + model.id + '" type="' + model.inputType + '" placeholder="' + model.placeholder + '" data-validation-required-message="' + model.validationMessage + '">';
+                let formGroup = angular.element(element.get(0).querySelector('.form-group'));
+                let content = $compile(template)(scope);
+                formGroup.append(content);
+            }
         }
     }
 
@@ -68,6 +88,7 @@
     sbApp.directive('sbAbout', sbAbout);
     sbApp.directive('sbContact', sbContact);
     sbApp.directive('sbForm', sbForm);
+    sbApp.directive('sbControlGroup', sbControlGroup);
     sbApp.directive('sbFooter', sbFooter);
     sbApp.directive('sbPortfolioGrid', sbPortfolioGrid);
     sbApp.directive('sbPortfolioModal', sbPortfolioModal);
