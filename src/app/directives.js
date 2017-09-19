@@ -54,7 +54,13 @@
             },
             link: (scope, element, attr) => {
                 let model = scope.model;
-                let template = '<' + model.fieldType + ' class="form-control"' + ' id="' + model.id + '" type="' + model.inputType + '" placeholder="' + model.placeholder + '" data-validation-required-message="' + model.validationMessage + '">';
+                let required = model.required ? 'required' : '';
+
+                // TODO: include other metas into the template.
+                if (model.other) {
+                    var other = model.other.split('.');
+                }
+                let template = '<' + model.fieldType + ' class="form-control"' + ' id="' + model.id + '" type="' + model.inputType + '" placeholder="' + model.placeholder + '" ' + required + ' " data-validation-required-message=" ' + model.validationMessage + '">';
                 let formGroup = angular.element(element.get(0).querySelector('.form-group'));
                 let content = $compile(template)(scope);
                 formGroup.append(content);
