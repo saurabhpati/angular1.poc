@@ -53,16 +53,25 @@
                 model: '='
             },
             link: (scope, element, attr) => {
-                let model = scope.model;
-                let required = model.required ? 'required' : '';
+                let model = scope.model,
+                    required = model.required ? 'required' : '',
+                    otherMetaAttr = '';
 
-                // TODO: include other metas into the template.
                 if (model.other) {
-                    var other = model.other.split('.');
+                    otherMetaAttr = model.other.reduce((acc, item) => {
+                        let others = item.split('.'),
+                            otherAttr = others[0],
+                            otherVal = others[1];
+
+                        acc = otherAttr + '="' + otherVal + '"';
+                        return acc;
+                    }, '');
                 }
-                let template = '<' + model.fieldType + ' class="form-control"' + ' id="' + model.id + '" type="' + model.inputType + '" placeholder="' + model.placeholder + '" ' + required + ' " data-validation-required-message=" ' + model.validationMessage + '">';
-                let formGroup = angular.element(element.get(0).querySelector('.form-group'));
-                let content = $compile(template)(scope);
+
+                let template = '<' + model.fieldType + ' class="form-control"' + ' id="' + model.id + '" type="' + model.inputType + '" placeholder="' + model.placeholder + '" ' + otherMetaAttr + required + ' " data-validation-required-message=" ' + model.validationMessage + '">',
+                    formGroup = angular.element(element.get(0).querySelector('.form-group')),
+                    content = $compile(template)(scope);
+
                 formGroup.append(content);
             }
         }
