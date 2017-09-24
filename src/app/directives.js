@@ -22,7 +22,7 @@
             controllerAs: 'aboutController',
             link: (scope, element, attr) => {
 
-            }   
+            }
         };
     }
 
@@ -38,7 +38,42 @@
     sbForm = () => {
         return {
             restrict: 'E',
-            templateUrl: 'app/views/sb-form.html'
+            templateUrl: 'app/views/sb-form.html',
+            scope: {
+                model: '='
+            }
+        }
+    }
+
+    sbControlGroup = ($compile) => {
+        return {
+            restrict: 'E',
+            templateUrl: 'app/views/sb-control-group.html',
+            scope: {
+                model: '='
+            },
+            link: (scope, element, attr) => {
+                let model = scope.model,
+                    required = model.required ? 'required' : '',
+                    otherMetaAttr = '';
+
+                if (model.other) {
+                    otherMetaAttr = model.other.reduce((acc, item) => {
+                        let others = item.split('.'),
+                            otherAttr = others[0],
+                            otherVal = others[1];
+
+                        acc = otherAttr + '="' + otherVal + '"';
+                        return acc;
+                    }, '');
+                }
+
+                let template = '<' + model.fieldType + ' class="form-control"' + ' id="' + model.id + '" type="' + model.inputType + '" placeholder="' + model.placeholder + '" ' + otherMetaAttr + required + ' " data-validation-required-message=" ' + model.validationMessage + '">',
+                    formGroup = angular.element(element.get(0).querySelector('.form-group')),
+                    content = $compile(template)(scope);
+
+                formGroup.append(content);
+            }
         }
     }
 
@@ -68,6 +103,7 @@
     sbApp.directive('sbAbout', sbAbout);
     sbApp.directive('sbContact', sbContact);
     sbApp.directive('sbForm', sbForm);
+    sbApp.directive('sbControlGroup', sbControlGroup);
     sbApp.directive('sbFooter', sbFooter);
     sbApp.directive('sbPortfolioGrid', sbPortfolioGrid);
     sbApp.directive('sbPortfolioModal', sbPortfolioModal);
