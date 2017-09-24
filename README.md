@@ -14,3 +14,4 @@ Pre-requisites:
 5. Install bower dependencies by 'bower install' once bower is installed globally.
 5. On the command prompt type either 'npm start' or 'gulp' and press enter.
 6. If you intend to use gulp then make sure gulp is installed globally running the command 'npm install gulp -g'.
+7. This project has a dependency on https://github.com/saurabhpati/WebApi.SoftBuilder.git which is a Web Api .NET RESTful Framework to get the data from the backend/service and it is internally hosted at http://localhost:49325/.
