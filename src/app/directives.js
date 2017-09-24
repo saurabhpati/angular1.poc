@@ -19,10 +19,7 @@
             restrict: 'E',
             templateUrl: 'app/views/about.html',
             controller: 'aboutController',
-            controllerAs: 'aboutController',
-            link: (scope, element, attr) => {
-
-            }
+            controllerAs: 'aboutController'
         };
     }
 
