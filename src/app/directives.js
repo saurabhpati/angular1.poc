@@ -54,8 +54,8 @@
                     required = model.required ? 'required' : '',
                     otherMetaAttr = '';
 
-                if (model.other) {
-                    otherMetaAttr = model.other.reduce((acc, item) => {
+                if (model.fieldMetas) {
+                    otherMetaAttr = model.fieldMetas.reduce((acc, item) => {
                         let others = item.split('.'),
                             otherAttr = others[0],
                             otherVal = others[1];
@@ -105,4 +105,3 @@
     sbApp.directive('sbPortfolioGrid', sbPortfolioGrid);
     sbApp.directive('sbPortfolioModal', sbPortfolioModal);
 })();
-

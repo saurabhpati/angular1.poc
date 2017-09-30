@@ -1,51 +1,24 @@
 (function () {
-    function contactController($compile) {
-        this.sectionId = 'contact';
-        this.sectionName = 'Contact Me';
-        this.form = {
-            id: 'contactForm',
-            fields: [
-                {
-                    id: 'name',
-                    name: 'Name',
-                    fieldType: 'input',
-                    inputType: 'text',
-                    placeholder: 'Name',
-                    required: true,
-                    validationMessage: 'Please enter your name.'
-                },
-                {
-                    id: 'email',
-                    name: 'Email Address',
-                    fieldType: 'input',
-                    inputType: 'email',
-                    placeholder: 'Email Address',
-                    required: true,
-                    validationMessage: 'Please enter your email address.'
-                },
-                {
-                    id: 'phone',
-                    name: 'Phone Number',
-                    fieldType: 'input',
-                    inputType: 'tel',
-                    placeholder: 'Phone Number',
-                    required: true,
-                    validationMessage: 'Please enter your phone number.'
-                },
-                {
-                    id: 'message',
-                    name: 'Message',
-                    fieldType: 'textarea',
-                    inputType: 'tel',
-                    placeholder: 'Message"',
-                    required: true,
-                    validationMessage: 'Please enter a message.',
-                    other: ['rows.5']
+    function contactController($compile, $http) {
+        $http.get('http://localhost:49325/api/home/contact')
+            .then((response) => {
+                if (!response.data) {
+                    throw "response does not have data";
                 }
-            ]
-        }
+
+                let contactData = response.data;
+                this.sectionId = contactData.id;
+                this.sectionName = contactData.name;
+                this.form = contactData.contactForm;
+                let metaField = this.form.fields.find(field => { return field.fieldMetas });
+                metaField.fieldMetas = metaField.fieldMetas.reduce((acc, meta) => {
+                    acc.push(meta.metatype + '.' + meta.metavalue);
+                    return acc;
+                }, []);
+            }, reason => console.log(reason))
+            .catch(exception => console.log(exception));
     }
 
-    sbApp.$inject = ['$compile'];
+    sbApp.$inject = ['$compile', '$http'];
     sbApp.controller('contactController', contactController);
 })();

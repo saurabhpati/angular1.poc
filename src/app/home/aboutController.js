@@ -11,12 +11,8 @@
                 this.sectionId = aboutData.id;
                 this.sectionName = aboutData.name;
                 this.sectionData = aboutData.displaydatas;
-            }, (reason) => {
-                console.log(reason);
-            })
-            .catch((exception) => {
-                console.log(exception);
-            });
+            }, reason => console.log(reason))
+            .catch(exception => console.log(exception));
     }
 
     aboutController.$inject = ['$http'];
