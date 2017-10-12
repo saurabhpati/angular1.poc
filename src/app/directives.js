@@ -65,7 +65,7 @@
                     }, '');
                 }
 
-                let template = '<' + model.fieldType + ' class="form-control"' + ' id="' + model.id + '" type="' + model.inputType + '" placeholder="' + model.placeholder + '" ' + otherMetaAttr + required + ' " data-validation-required-message=" ' + model.validationMessage + '">',
+                let template = `<${model.fieldType} class="form-control" id="${model.id}" type="${model.inputType}" placeholder="${model.placeholder}" ${otherMetaAttr} ${required} data-validation-required-message="${model.validationMessage}">`,
                     formGroup = angular.element(element.get(0).querySelector('.form-group')),
                     content = $compile(template)(scope);
 

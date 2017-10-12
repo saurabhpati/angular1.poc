@@ -7,6 +7,6 @@ gulp.task('default', () => {
         ext: 'js'
     }).on('rs', () => {
         gulp.src('./src/app/server.js');
-        gulp.watch(['./src/**/', './**.html', '*.js', '*.html']);
+        gulp.watch(['./src/**', './**.html', '*.js', '*.html']);
     });
 });
