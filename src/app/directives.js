@@ -1,20 +1,20 @@
 (() => {
 
-    sbNavigation = () => {
+    let sbNavigation = () => {
         return {
             restrict: 'E',
             templateUrl: 'app/views/navigation.html'
         };
     }
 
-    sbHeader = () => {
+    let sbHeader = () => {
         return {
             restrict: 'E',
             templateUrl: 'app/views/header.html'
         };
     }
 
-    sbAbout = () => {
+    let sbAbout = () => {
         return {
             restrict: 'E',
             templateUrl: 'app/views/about.html',
@@ -23,7 +23,7 @@
         };
     }
 
-    sbContact = () => {
+    let sbContact = () => {
         return {
             restrict: 'E',
             templateUrl: 'app/views/contact.html',
@@ -32,7 +32,7 @@
         };
     }
 
-    sbForm = () => {
+    let sbForm = () => {
         return {
             restrict: 'E',
             templateUrl: 'app/views/sb-form.html',
@@ -42,7 +42,7 @@
         }
     }
 
-    sbControlGroup = ($compile) => {
+    let sbControlGroup = ($compile) => {
         return {
             restrict: 'E',
             templateUrl: 'app/views/sb-control-group.html',
@@ -74,24 +74,34 @@
         }
     }
 
-    sbFooter = () => {
+    let sbFooter = () => {
         return {
             restrict: 'E',
             templateUrl: 'app/views/footer.html'
         };
     }
 
-    sbPortfolioGrid = () => {
+    let sbPortfolioGrid = () => {
         return {
             restrict: 'E',
             templateUrl: 'app/views/portfolio-grid.html'
         }
     }
 
-    sbPortfolioModal = () => {
+    let sbPortfolioModal = () => {
         return {
             restrict: 'E',
             templateUrl: 'app/views/portfolio-modal.html'
+        }
+    }
+
+    let sbBack = () => {
+        return {
+            restrict: 'E',
+            templateUrl: 'app/views/sb-back.html',
+            scope: {
+                redirectTo: '=' 
+            }
         }
     }
 
@@ -104,5 +114,6 @@
     .directive('sbControlGroup', sbControlGroup)
     .directive('sbFooter', sbFooter)
     .directive('sbPortfolioGrid', sbPortfolioGrid)
-    .directive('sbPortfolioModal', sbPortfolioModal);
+    .directive('sbPortfolioModal', sbPortfolioModal)
+    .directive('sbBack', sbBack);
 })();

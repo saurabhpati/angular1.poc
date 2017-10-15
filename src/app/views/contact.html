@@ -1,13 +1,14 @@
 <section id={{contactController.sectionId}}>
-    <div class="container">
-      <h2 class="text-center">{{contactController.sectionName}}</h2>
-      <hr class="star-primary">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-          <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-          <sb-form model="contactController.form"></sb-form>
-        </div>
+  <div class="container">
+    <h2 class="text-center">{{contactController.sectionName}}</h2>
+    <hr class="star-primary">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+        <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+        <sb-form model="contactController.form"></sb-form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+<sb-back redirect-to='"#/"'></sb-back>
