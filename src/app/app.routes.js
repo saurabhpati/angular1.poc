@@ -10,11 +10,14 @@
             templateUrl: 'app/views/about.html',
             controller: 'aboutController',
             controllerAs: 'aboutController'
-        }).when('/', {
+        })
+        .when('/', {
             templateUrl: 'app/views/home.html'
         });
     });
 
+    /* This config is provided using location provider so as to suppress hash bang (#!) 
+       being appended to the route by angular-route v1.6.x. */
     angular.module('softbuilderModule').config(($locationProvider) => {
         $locationProvider.hashPrefix('');
     });
