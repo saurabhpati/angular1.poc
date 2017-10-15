@@ -95,13 +95,14 @@
         }
     }
 
-    sbApp.directive('sbNavigation', sbNavigation);
-    sbApp.directive('sbHeader', sbHeader);
-    sbApp.directive('sbAbout', sbAbout);
-    sbApp.directive('sbContact', sbContact);
-    sbApp.directive('sbForm', sbForm);
-    sbApp.directive('sbControlGroup', sbControlGroup);
-    sbApp.directive('sbFooter', sbFooter);
-    sbApp.directive('sbPortfolioGrid', sbPortfolioGrid);
-    sbApp.directive('sbPortfolioModal', sbPortfolioModal);
+    angular.module('softbuilderModule')
+    .directive('sbNavigation', sbNavigation)
+    .directive('sbHeader', sbHeader)
+    .directive('sbAbout', sbAbout)
+    .directive('sbContact', sbContact)
+    .directive('sbForm', sbForm)
+    .directive('sbControlGroup', sbControlGroup)
+    .directive('sbFooter', sbFooter)
+    .directive('sbPortfolioGrid', sbPortfolioGrid)
+    .directive('sbPortfolioModal', sbPortfolioModal);
 })();

@@ -19,6 +19,6 @@
             .catch(exception => console.log(exception));
     }
 
-    sbApp.$inject = ['$compile', '$http'];
-    sbApp.controller('contactController', contactController);
+    contactController.$inject = ['$compile', '$http'];
+    angular.module('softbuilderModule').controller('contactController', contactController);
 })();

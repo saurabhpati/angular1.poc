@@ -16,5 +16,5 @@
     }
 
     aboutController.$inject = ['$http'];
-    sbApp.controller('aboutController', aboutController);
+    angular.module('softbuilderModule').controller('aboutController', aboutController);
 })();
